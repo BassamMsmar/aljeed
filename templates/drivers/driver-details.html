@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+</head>
+<body>
+    <H2>
+        {{ driver.driver_name }}
+    </H2>
+    <div>
+            <img src="{{ driver.driver_images.url }}" style="height: 100px; width: 100px;">
+    </div>
+    <P>
+        {{ driver.phone_number }}
+    </P>
+    <p>
+        {{ driver.plate_number }}
+    </p>
+    <p>
+        {{ driver.track_type }}
+    </p>
+    <p>
+        {{ driver.resident_number }}
+    </p>
+    {{ driver.resident_number }}
+
+</body>
+</html>
+

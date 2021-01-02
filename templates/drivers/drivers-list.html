@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drivers</title>
+</head>
+<body>
+    {% for driver in drivers %}
+    <H2>
+        {{ driver.driver_name }}
+    </H2>
+    <div>
+        <a href="{% url 'driver_details' driver.pk %}">
+            <img src="{{ driver.driver_images.url }}" style="height: 100px; width: 100px;">
+        </a>
+        
+    </div>
+    <P>
+        {{ driver.phone_number}}
+    </P>
+    {% endfor %}
+</body>
+</html>
+
