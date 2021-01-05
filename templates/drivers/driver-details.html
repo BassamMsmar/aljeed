@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>details</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}All products{% endblock %}
+{% block content %}
     <H2>
         {{ driver.driver_name }}
     </H2>
@@ -24,8 +19,12 @@
     <p>
         {{ driver.resident_number }}
     </p>
-    {{ driver.resident_number }}
+    <div>
+        <a href="{% url 'home' %}">go to home</a>
+    </div>
+    <div>
+        <a href="{% url 'drivers_list' %}">Go To Drivers List</a>
+    </div>   
 
-</body>
-</html>
+{% endblock %}
 

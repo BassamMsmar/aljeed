@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>driver add</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}All products{% endblock %}
+{% block content %}
     <form action="" method="POST"  enctype="multipart/form-data">
 
         {% csrf_token %}
@@ -13,5 +8,11 @@
 
         <button> save </button>
     </form>
-</body>
-</html>
+    <div>
+        <button>
+            <a href="{% url 'drivers_list' %}">Cancel</a>
+        </button>
+
+    </div>   
+
+{% endblock %}

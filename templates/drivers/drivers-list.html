@@ -1,25 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>drivers</title>
-</head>
-<body>
-    {% for driver in drivers %}
-    <H2>
-        {{ driver.driver_name }}
-    </H2>
-    <div>
-        <a href="{% url 'driver_details' driver.pk %}">
-            <img src="{{ driver.driver_images.url }}" style="height: 100px; width: 100px;">
-        </a>
-        
+{% extends 'base.html' %}
+{% block title %}All products{% endblock %}
+{% block content %}
+<section id="featured-products">
+    <div class="cart-btn-box">
+        <a href="{% url 'add_driver' %}">
+            <i class="fas fa-cart-plus"></i>Add Driver</a>
     </div>
-    <P>
-        {{ driver.phone_number}}
-    </P>
-    {% endfor %}
-</body>
-</html>
+    <div class="products-wrapper clearfix">
+
+        {% for driver in drivers %}
+        <H2>
+            {{ driver.driver_name }}
+        </H2>
+        <div>
+            <a href="{% url 'driver_details' driver.pk %}">
+                <img src="{{ driver.driver_images.url }}" style="height: 100px; width: 100px;">
+            </a>
+
+        </div>
+        <P>
+            {{ driver.phone_number}}
+        </P>
+        {% endfor %}
+        <div class="cart-btn-box">
+            <a href="{% url 'home' %}">
+                <i class="fas fa-cart-plus"></i>القائمة الرئيسية</a>
+    </div>
+</section>
+    
+
+{% endblock %}
 

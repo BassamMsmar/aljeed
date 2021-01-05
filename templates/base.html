@@ -1,11 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'normalize.css' %}"/>
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>{% block title %}{% endblock %} | Adetech Store</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <header>
+            <h1 id="logo">
+                <a href="{% url 'home' %}">ALJEED</a>
+            </h1>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        </div> 
+        <footer>
+            <a href="#" id="scroll-up">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+            <!--2-->
+            <p>&copy; 2021 ALJEED All Rights Reserved.</p>
+            <!--2-->
+        </footer> 
 </body>
 </html>
